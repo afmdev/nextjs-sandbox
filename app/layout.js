@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 const links = [{
 	label: 'Home',
 	route: '/'
@@ -17,7 +19,13 @@ export default function RootLayout({ children }) {
 				<header>
 					<nav>
 						<ul>
-							{}
+							{links.map(({ label, route }) => (
+								<li key={route}>
+									<Link href={route}>
+										<a>{label}</a>
+									</Link>
+								</li>
+							))}
 						</ul>
 					</nav>
 				</header>
