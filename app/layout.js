@@ -1,3 +1,12 @@
+const links = [{
+	label: 'Home',
+	route: '/'
+},
+{
+	label: 'About',
+	route: '/about'
+}]
+
 export default function RootLayout({ children }) {
 	return (
 		<html>
@@ -8,7 +17,7 @@ export default function RootLayout({ children }) {
 				<header>
 					<nav>
 						<ul>
-							<li>Home</li>
+							{}
 						</ul>
 					</nav>
 				</header>
