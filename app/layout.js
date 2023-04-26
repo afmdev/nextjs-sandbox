@@ -1,4 +1,7 @@
-import { Navigation } from "./components/Navigation"
+import "../styles/globals.css"
+
+import { Navigation } from "../components/Navigation"
+import { TopBar } from "../components/TopBar"
 
 export default function RootLayout({ children }) {
 	return (
@@ -7,7 +10,13 @@ export default function RootLayout({ children }) {
 				<title>My app with Next.js 13</title>
 			</head>
 			<body>
-				<Navigation />
+				<header>
+					<TopBar />
+					<nav>
+						<Navigation />
+					</nav>
+				</header>
+
 				{children}
 			</body>
 		</html>
