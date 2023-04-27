@@ -12,14 +12,12 @@ export default function RootLayout({ children }) {
 			</head>
 			<body>
 				<header>
-					<div className="my-0">
+					<div>
 						<TopBar />
 					</div>
-					<nav>
-						<Navigation />
-					</nav>
+					<Navigation />
 				</header>
-				
+
 				{children}
 
 				<footer>
