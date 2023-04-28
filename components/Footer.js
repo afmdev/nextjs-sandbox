@@ -1,13 +1,13 @@
 export function Footer() {
 	return (
-		<div class="bg-neutral-200 text-center text-white dark:bg-neutral-200">
-			<div class="pt-9">
-				<div class="mb-9 flex justify-center">
+		<div className="bg-neutral-200 text-center text-white dark:bg-neutral-200">
+			<div className="pt-9">
+				<div className="mb-9 flex justify-center">
 
-					<a href="#!" class="mr-9 text-neutral-800 dark:text-neutral-200">
+					<a href="#!" className="mr-9 text-neutral-800 dark:text-neutral-200">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
-							class="h-4 w-4"
+							className="h-4 w-4"
 							fill="currentColor"
 							viewBox="0 0 24 24">
 							<path
@@ -15,10 +15,10 @@ export function Footer() {
 						</svg>
 					</a>
 
-					<a href="#!" class="mr-9 text-neutral-800 dark:text-neutral-200">
+					<a href="#!" className="mr-9 text-neutral-800 dark:text-neutral-200">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
-							class="h-4 w-4"
+							className="h-4 w-4"
 							fill="currentColor"
 							viewBox="0 0 24 24">
 							<path
@@ -26,10 +26,10 @@ export function Footer() {
 						</svg>
 					</a>
 
-					<a href="#!" class="mr-9 text-neutral-800 dark:text-neutral-200">
+					<a href="#!" className="mr-9 text-neutral-800 dark:text-neutral-200">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
-							class="h-4 w-4"
+							className="h-4 w-4"
 							fill="currentColor"
 							viewBox="0 0 24 24">
 							<path
@@ -37,10 +37,10 @@ export function Footer() {
 						</svg>
 					</a>
 
-					<a href="#!" class="text-neutral-800 dark:text-neutral-200">
+					<a href="#!" className="text-neutral-800 dark:text-neutral-200">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
-							class="h-4 w-4"
+							className="h-4 w-4"
 							fill="currentColor"
 							viewBox="0 0 24 24">
 							<path
@@ -51,7 +51,7 @@ export function Footer() {
 			</div>
 
 			<div
-				class="bg-neutral-300 p-4 text-center text-neutral-700 dark:bg-neutral-700 dark:text-neutral-200">
+				className="bg-neutral-300 p-4 text-center text-neutral-700 dark:bg-neutral-700 dark:text-neutral-200">
 				© 2023 Copyright
 			</div>
 		</div>
