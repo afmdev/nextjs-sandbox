@@ -1,8 +1,8 @@
 import "../styles/globals.css"
 
-import { Navigation } from "../components/Navigation"
-import { TopBar } from "../components/TopBar"
-import { Footer } from "../components/Footer"
+import { Navigation } from "../components/navigation"
+import { TopBar } from "../components/topBar"
+import { Footer } from "../components/footer"
 
 export default function RootLayout({ children }) {
 	return (
