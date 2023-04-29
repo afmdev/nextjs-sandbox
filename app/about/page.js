@@ -46,7 +46,11 @@ export default function About() {
 			<ul>
 				{products.map(product => (
 					<li key={product.id}>
-						<strong>{product.name}</strong> - {categories.find(category => category.id === product.category_id).name}
+						<strong>{product.name}</strong> -
+
+						{categories.find(category => category.id === product.category_id).name}
+
+
 					</li>
 				))}
 			</ul>
