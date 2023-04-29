@@ -1,10 +1,12 @@
-import { getPost } from '../utils/API';
+import { getPost, getModel } from '../utils/API';
 
 export default async function HomePage() {
+
 	const posts = await getPost();
-
-
+	const model = await getModel();
+	
 	const blogPosts = posts.items
+	const blogModel = model.items
 
 	return (
 		<div div className="relative isolate pt-10">
@@ -54,8 +56,8 @@ export default async function HomePage() {
 
 					<div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-6">
 
-						{blogPosts.map((item) => (
-							<div key={item.sys.id} className="group relative">
+						{blogPosts.map((post) => (
+							<div key={post.sys.id} className="group relative">
 								<div className="card-content ring-0 rounded-lg flex flex-col space-y-2 p-4 break-inside-avoid mb-6 bg-white transform duration-200 hover:shadow-gray-200 hover:shadow-md  z-0 relative shadow-2xl hover:scale-[101%]">
 									<div className="card-image overflow-hidden rounded-lg">
 										<a href="">
@@ -64,20 +66,24 @@ export default async function HomePage() {
 									</div>
 									<div className="card-title flex justify-center text-xl font-black">
 										<a href="">
-											<h3>{item.fields.title}</h3>
+											<h3>{post.fields.title}</h3>
 										</a>
 									</div>
 									<div className="card-description">
-										<p className="overflow-hidden line-clamp-3 mt-4">{item.fields.content}</p>
+										<p className="overflow-hidden line-clamp-3 mt-4">{post.fields.content}</p>
 									</div>
 									<div className="flex flex-wrap justify-between items-center border-t pt-2 flex-col md:flex-row">
 										<div className="flex space-x-2">
 											<div className="text-sm rounded-full px-4 p-2 capitalize bg-white text-gray-800 border border-gray-400">
-												freemium
+
+
+												{blogModel.find(model => model.sys.id === post.fields.model.sys.id).fields.name}
+
+
 											</div>
 										</div>
 										<div className="flex space-x-2 justify-between">
-											<a href={`${item.fields.link}`} target="_blank" className="border border-gray-300 rounded-full px-4 p-2 hover:bg-gray-100 hover:border-gray-200 hover:text-gray-900 cursor-pointer bg-white text-sm flex items-center ml-1 mt-1 space-x-2">
+											<a href={`${post.fields.link}`} target="_blank" className="border border-gray-300 rounded-full px-4 p-2 hover:bg-gray-100 hover:border-gray-200 hover:text-gray-900 cursor-pointer bg-white text-sm flex items-center ml-1 mt-1 space-x-2">
 												<svg viewBox="0 0 24 24" fill="none" className="w-4 h-4" xmlns="http://www.w3.org/2000/svg">
 													<path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
 													<path d="M13 11L21.2 2.80005" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -85,7 +91,7 @@ export default async function HomePage() {
 												</svg>
 												<span className="">Visit</span>
 											</a>
-											<a href={`${item.fields.slug}`} className="border border-gray-300 rounded-full px-4 p-2 hover:bg-gray-100 hover:border-gray-200 hover:text-gray-900 cursor-pointer bg-white text-sm flex items-center ml-1 mt-1">
+											<a href={`${post.fields.slug}`} className="border border-gray-300 rounded-full px-4 p-2 hover:bg-gray-100 hover:border-gray-200 hover:text-gray-900 cursor-pointer bg-white text-sm flex items-center ml-1 mt-1">
 												<span className="">Details</span>
 											</a>
 										</div>
