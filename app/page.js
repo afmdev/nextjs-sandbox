@@ -1,7 +1,7 @@
-import { getPosts } from '../utils/getPosts';
+import { getPost } from '../utils/API';
 
 export default async function HomePage() {
-	const posts = await getPosts();
+	const posts = await getPost();
 
 
 	const blogPosts = posts.items

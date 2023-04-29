@@ -27,9 +27,31 @@ const features = [
 	},
 ]
 
+const categories = [
+	{ id: 1, name: 'Category 1' },
+	{ id: 2, name: 'Category 2' },
+	{ id: 3, name: 'Category 3' }
+];
+
+const products = [
+	{ id: 1, name: 'Product 1', category_id: 1 },
+	{ id: 2, name: 'Product 2', category_id: 2 },
+	{ id: 3, name: 'Product 3', category_id: 3 }
+];
+
 export default function About() {
 	return (
 		<div className="bg-white py-24 sm:py-32">
+
+			<ul>
+				{products.map(product => (
+					<li key={product.id}>
+						<strong>{product.name}</strong> - {categories.find(category => category.id === product.category_id).name}
+					</li>
+				))}
+			</ul>
+
+
 			<div className="mx-auto max-w-7xl px-6 lg:px-8">
 				<div className="mx-auto max-w-2xl lg:text-center">
 					<h2 className="text-base font-semibold leading-7 text-indigo-600">Deploy faster</h2>
