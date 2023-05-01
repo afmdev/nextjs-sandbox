@@ -13,7 +13,7 @@ export default async function HomePage() {
 
 	return (
 		<div div className="relative isolate pt-10">
-
+			{console.log("blogCategory", blogCategory)}
 			<div
 				className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
 				aria-hidden="true"
@@ -60,20 +60,27 @@ export default async function HomePage() {
 
 					<div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-6">
 
-						{blogPosts.map((post) => (
+						{blogPosts.map((post, i) => (
 							<div key={post.sys.id} className="group relative">
 								<div className="card-content ring-0 rounded-lg flex flex-col space-y-2 p-4 break-inside-avoid mb-6 bg-white transform duration-200 hover:shadow-gray-200 hover:shadow-md  z-0 relative shadow-2xl hover:scale-[101%]">
 									<div className="card-image overflow-hidden rounded-lg">
 										<a href={`/ai/${post.fields.slug}`}>
 											<img src={blogCoverImage.find(img => img.sys.id === post.fields.coverImage.sys.id).fields.file.url} alt="" className="hover:scale-[103%] transform duration-200" />
 										</a>
+
 									</div>
 									<div className="card-title text-lg font-bold pt-3">
 										<a href={`/ai/${post.fields.slug}`}>
 											<h3>{post.fields.title}</h3>
 										</a>
 										<span className="inline-flex items-center rounded-md bg-red-50 px-2 py-1 mt-2 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10">
-											YOYO
+
+											{post.fields.categories.map((category) => (
+												<div key={category.sys.id}>
+													{blogCategory.find(catName => catName.sys.id === category.sys.id).fields.name}
+												</div>
+											))}
+
 										</span>
 									</div>
 									<div className="card-description">
