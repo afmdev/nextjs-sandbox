@@ -13,10 +13,10 @@ const navigation = [{
 	href: '/about'
 }, {
 	name: 'AI Tools',
-	href: '/ai- tools'
+	href: '/ai'
 }]
 
-export default function Navigation() {
+export function Navigation() {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
 	return (
