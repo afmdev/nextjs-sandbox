@@ -8,7 +8,7 @@ export default function RootLayout({ children }) {
 	return (
 		<html>
 			<head>
-				<title>Next.js 13 + Contentful</title>
+				<title>AI TOOLS LISTING</title>
 			</head>
 			<body>
 				<header>

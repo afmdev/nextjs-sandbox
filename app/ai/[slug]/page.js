@@ -1,4 +1,4 @@
-export default function AiToolsSlug({ params }) {
+export default function AiPageSingle({ params }) {
 
 	const { slug } = params
 
