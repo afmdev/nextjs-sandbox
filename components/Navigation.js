@@ -11,9 +11,12 @@ const navigation = [{
 }, {
 	name: 'About',
 	href: '/about'
+}, {
+	name: 'AI Tools',
+	href: '/ai- tools'
 }]
 
-export function Navigation() {
+export default function Navigation() {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
 	return (
