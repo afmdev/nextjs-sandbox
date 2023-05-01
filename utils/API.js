@@ -34,7 +34,7 @@ export async function getTag() {
 	}
 }
 
-export async function getModel() {
+export async function getPaidFree() {
 	try {
 		const response = await fetch(
 			`https://cdn.contentful.com/spaces/39eo3nd1n1px/entries?access_token=Kg2zFy4PmKUAwMZKHN3vy7ZrB8AM1G3weQdFBSJkP0c&content_type=blogModel`

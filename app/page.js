@@ -1,19 +1,20 @@
-import { getPost, getModel, getCategory } from '../utils/API';
+import { getPost, getPaidFree, getCategory, getTag } from '../utils/API';
 
 export default async function HomePage() {
 
 	const posts = await getPost();
-	const model = await getModel();
+	const paidFree = await getPaidFree();
 	const category = await getCategory();
+	const tag = await getTag()
 
 	const blogPosts = posts.items
 	const blogCoverImage = posts.includes.Asset
-	const blogModel = model.items
+	const blogPaidFree = paidFree.items
 	const blogCategory = category.items
+	const blogTag = tag.items
 
 	return (
 		<div div className="relative isolate pt-10">
-			{console.log("blogCategory", blogCategory)}
 			<div
 				className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
 				aria-hidden="true"
@@ -65,7 +66,7 @@ export default async function HomePage() {
 								<div className="card-content ring-0 rounded-lg flex flex-col space-y-2 p-4 break-inside-avoid mb-6 bg-white transform duration-200 hover:shadow-gray-200 hover:shadow-md  z-0 relative shadow-2xl hover:scale-[101%]">
 									<div className="card-image overflow-hidden rounded-lg">
 										<a href={`/ai/${post.fields.slug}`}>
-											<img src={blogCoverImage.find(img => img.sys.id === post.fields.coverImage.sys.id).fields.file.url} alt="" className="hover:scale-[103%] transform duration-200" />
+											<img src={blogCoverImage.find(coverImage => coverImage.sys.id === post.fields.coverImage.sys.id).fields.file.url} alt="" className="hover:scale-[103%] transform duration-200" />
 										</a>
 
 									</div>
@@ -91,7 +92,7 @@ export default async function HomePage() {
 											<div className="text-sm rounded-full px-4 p-2 capitalize bg-white text-gray-800 border border-gray-400">
 
 
-												{blogModel.find(model => model.sys.id === post.fields.model.sys.id).fields.name}
+												{blogPaidFree.find(model => model.sys.id === post.fields.model.sys.id).fields.name}
 
 
 											</div>
