@@ -9,11 +9,11 @@ const navigation = [{
 	name: 'Home',
 	href: '/'
 }, {
-	name: 'About',
-	href: '/about'
-}, {
 	name: 'AI Tools',
 	href: '/ai'
+}, {
+	name: 'About',
+	href: '/about'
 }]
 
 export function Navigation() {
@@ -40,7 +40,7 @@ export function Navigation() {
 						onClick={() => setMobileMenuOpen(true)}
 					>
 						<span className="sr-only">Open main menu</span>
-						<Bars3Icon className="h-6 w-6" aria-hidden="true" />
+						<Bars3Icon className="h-6 w-6" />
 					</button>
 				</div>
 				<div className="hidden lg:flex lg:gap-x-12">
@@ -57,7 +57,7 @@ export function Navigation() {
 				</div>
 				<div className="hidden lg:flex lg:flex-1 lg:justify-end">
 					{/* <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-						Log in <span aria-hidden="true">&rarr;</span>
+						Log in <span>&rarr;</span>
 					</a> */}
 				</div>
 			</nav>
@@ -80,7 +80,7 @@ export function Navigation() {
 							onClick={() => setMobileMenuOpen(false)}
 						>
 							<span className="sr-only">Close menu</span>
-							<XMarkIcon className="h-6 w-6" aria-hidden="true" />
+							<XMarkIcon className="h-6 w-6" />
 						</button>
 					</div>
 					<div className="mt-6 flow-root">
@@ -97,14 +97,6 @@ export function Navigation() {
 										</Link>
 									</div>
 								))}
-							</div>
-							<div className="py-6">
-								<a
-									href="#"
-									className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-								>
-									Log in
-								</a>
 							</div>
 						</div>
 					</div>

@@ -4,7 +4,7 @@ export function Footer() {
 			<div className="pt-9">
 				<div className="mb-9 flex justify-center">
 
-					<a href="#!" className="mr-9 text-neutral-800 dark:text-neutral-200">
+					<a href="/" className="mr-9 text-neutral-800 dark:text-neutral-200">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							className="h-4 w-4"
@@ -15,7 +15,7 @@ export function Footer() {
 						</svg>
 					</a>
 
-					<a href="#!" className="mr-9 text-neutral-800 dark:text-neutral-200">
+					<a href="/" className="mr-9 text-neutral-800 dark:text-neutral-200">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							className="h-4 w-4"
@@ -26,7 +26,7 @@ export function Footer() {
 						</svg>
 					</a>
 
-					<a href="#!" className="mr-9 text-neutral-800 dark:text-neutral-200">
+					<a href="/" className="mr-9 text-neutral-800 dark:text-neutral-200">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							className="h-4 w-4"
@@ -37,7 +37,7 @@ export function Footer() {
 						</svg>
 					</a>
 
-					<a href="#!" className="text-neutral-800 dark:text-neutral-200">
+					<a href="/" className="text-neutral-800 dark:text-neutral-200">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							className="h-4 w-4"
