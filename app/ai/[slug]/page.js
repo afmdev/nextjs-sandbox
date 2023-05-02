@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { getPaidFree, getCategory, getTag } from "utils/API";
 
 const getPostSingle = async (slug) => {
@@ -28,7 +29,7 @@ export default async function AiPageSingle({ params }) {
 
       <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
         <div className="flex space-x-2 mb-5 items-center">
-          <a href="/" className="text-gray-400 hover:text-gray-500">Home</a>
+          <Link href="/" className="text-gray-400 hover:text-gray-500">Home</Link>
         </div>
 
 
@@ -44,9 +45,9 @@ export default async function AiPageSingle({ params }) {
                   <div className="border border-gray-300 px-4 py-2 rounded-full bg-white">{blogPaidFree.find((paidFree) => paidFree.sys.id === post.fields.model.sys.id).fields.name}
                   </div>
                   <div className="flex items-center">
-                    <a href={`${post.fields.link}`} target="_blank" title={post.fields.title} className="border border-gray-300 rounded-full px-6 p-2 hover:bg-gray-100 hover:border-gray-200 hover:text-gray-900 cursor-pointer text-white bg-blue-500 text-lg flex items-center space-x-2">
+                    <Link href={`${post.fields.link}`} target="_blank" title={post.fields.title} className="border border-gray-300 rounded-full px-6 p-2 hover:bg-gray-100 hover:border-gray-200 hover:text-gray-900 cursor-pointer text-white bg-blue-500 text-lg flex items-center space-x-2">
                       <div className="">Visit</div>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

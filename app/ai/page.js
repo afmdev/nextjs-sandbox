@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { getPost, getPaidFree, getCategory, getTag } from "utils/API";
 
 export default async function AiTools() {
@@ -20,14 +21,14 @@ export default async function AiTools() {
 						<div key={post.sys.id} className="group relative">
 							<div className="card-content ring-0 rounded-lg flex flex-col space-y-2 p-4 break-inside-avoid mb-6 bg-white transform duration-200 hover:shadow-gray-200 hover:shadow-md  z-0 relative shadow-2xl hover:scale-[101%]">
 								<div className="card-image overflow-hidden rounded-lg">
-									<a href={`/ai/${post.fields.slug}`}>
+									<Link href={`/ai/${post.fields.slug}`}>
 										<img src={blogCoverImage.find((coverImage) => coverImage.sys.id === post.fields.coverImage.sys.id).fields.file.url} alt={post.fields.title} className="hover:scale-[103%] transform duration-200" />
-									</a>
+									</Link>
 								</div>
 								<div className="card-title text-lg font-bold pt-3">
-									<a href={`/ai/${post.fields.slug}`}>
+									<Link href={`/ai/${post.fields.slug}`}>
 										<h3>{post.fields.title}</h3>
-									</a>
+									</Link>
 									<span className="inline-flex items-center rounded-md bg-red-50 px-2 py-1 mt-2 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10">
 										{post.fields.categories.map((category) => (
 											<div key={category.sys.id}>{blogCategory.find((catName) => catName.sys.id === category.sys.id).fields.name}</div>
@@ -49,12 +50,12 @@ export default async function AiTools() {
 										<div className="text-sm rounded-full px-4 p-2 capitalize bg-white text-gray-800 border border-gray-400">{blogPaidFree.find((paidFree) => paidFree.sys.id === post.fields.model.sys.id).fields.name}</div>
 									</div>
 									<div className="flex space-x-2 justify-between">
-										<a href={`${post.fields.link}`} target="_blank" className="border border-gray-300 rounded-full px-4 p-2 hover:bg-gray-100 hover:border-gray-200 hover:text-gray-900 cursor-pointer bg-white text-sm flex items-center ml-1 mt-1 space-x-2">
+										<Link href={`${post.fields.link}`} target="_blank" className="border border-gray-300 rounded-full px-4 p-2 hover:bg-gray-100 hover:border-gray-200 hover:text-gray-900 cursor-pointer bg-white text-sm flex items-center ml-1 mt-1 space-x-2">
 											<span className="">Visit</span>
-										</a>
-										<a href={`/ai/${post.fields.slug}`} className="border border-gray-300 rounded-full px-4 p-2 hover:bg-gray-100 hover:border-gray-200 hover:text-gray-900 cursor-pointer bg-white text-sm flex items-center ml-1 mt-1">
+										</Link>
+										<Link href={`/ai/${post.fields.slug}`} className="border border-gray-300 rounded-full px-4 p-2 hover:bg-gray-100 hover:border-gray-200 hover:text-gray-900 cursor-pointer bg-white text-sm flex items-center ml-1 mt-1">
 											<span className="">Details</span>
-										</a>
+										</Link>
 									</div>
 								</div>
 							</div>
