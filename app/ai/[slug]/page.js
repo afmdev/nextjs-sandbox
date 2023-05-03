@@ -71,17 +71,6 @@ export default async function AiPageSingle({ params }) {
             </div>
           </div>
         ))}
-
-
-
-
-
-
-
-
-
-
-
       </div>
     </div>
 
