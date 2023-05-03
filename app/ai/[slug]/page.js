@@ -3,11 +3,15 @@ import { getPaidFree, getCategory, getTag } from "utils/API";
 
 const getPostSingle = async (slug) => {
   try {
-    const response = await fetch(`https://cdn.contentful.com/spaces/39eo3nd1n1px/entries?access_token=Kg2zFy4PmKUAwMZKHN3vy7ZrB8AM1G3weQdFBSJkP0c&content_type=post&fields.slug=${slug}&limit=1`);
-    const data = await response.json();
-    return data;
+    const response = await fetch(`https://cdn.contentful.com/spaces/39eo3nd1n1px/entries?access_token=Kg2zFy4PmKUAwMZKHN3vy7ZrB8AM1G3weQdFBSJkP0c&content_type=post&fields.slug=${slug}&limit=1`, {
+      next: {
+        revalidate: 10,
+      }
+    })
+    const data = await response.json()
+    return data
   } catch (error) {
-    console.error(error);
+    console.error(error)
   }
 };
 
