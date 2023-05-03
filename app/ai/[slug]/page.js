@@ -1,5 +1,8 @@
 import Link from 'next/link'
+import Image from 'next/image'
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getPaidFree, getCategory, getTag } from "utils/API";
+
 
 const getPostSingle = async (slug) => {
   try {
@@ -28,6 +31,7 @@ export default async function AiPageSingle({ params }) {
   const blogCategory = category.items;
   const blogTag = tag.items;
 
+
   return (
     <div div className="relative isolate pt-10">
 
@@ -44,7 +48,11 @@ export default async function AiPageSingle({ params }) {
 
               <div className="md:w-2/6">
 
-                <img src={blogCoverImage.find((coverImage) => coverImage.sys.id === post.fields.coverImage.sys.id).fields.file.url} alt={post.fields.title} className="rounded-xl border hover:scale-[103%] transform duration-200" />
+                <img
+                  src={blogCoverImage.find((coverImage) => coverImage.sys.id === post.fields.coverImage.sys.id).fields.file.url}
+                  alt={post.fields.title}
+                  className="rounded-xl border hover:scale-[103%] transform duration-200"
+                />
                 <div className="flex items-center justify-between mt-6">
                   <div className="border border-gray-300 px-4 py-2 rounded-full bg-white">{blogPaidFree.find((paidFree) => paidFree.sys.id === post.fields.model.sys.id).fields.name}
                   </div>
@@ -56,7 +64,7 @@ export default async function AiPageSingle({ params }) {
                 </div>
               </div>
               <div className="md:w-4/6 pt-6 md:pt-0">
-                {post.fields.content}
+                {documentToReactComponents(post.fields.content)}
                 <div className="flex space-x-3 mt-6 flex-wrap">
                   <div>
                     <span className="inline-flex items-center rounded-md bg-red-50 px-2 py-1 mr-2 mt-2 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10">

@@ -1,6 +1,10 @@
+const spaceId = process.env.CONTENTFUL_SPACE_ID;
+const accessToken = process.env.CONTENTFUL_ACCESS_TOKEN;
+
 export async function getPost() {
 	try {
 		const response = await fetch(
+
 			`https://cdn.contentful.com/spaces/39eo3nd1n1px/entries?access_token=Kg2zFy4PmKUAwMZKHN3vy7ZrB8AM1G3weQdFBSJkP0c&content_type=post`, {
 			next: {
 				revalidate: 10,
