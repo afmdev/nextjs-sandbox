@@ -19,9 +19,9 @@ const navigation = [
 		href: "/about",
 	},
 	{
-		name: "About",
-		href: "/about",
-	},
+		name: "Contact",
+		href: "/contact",
+	}
 ];
 
 export function Navigation() {
