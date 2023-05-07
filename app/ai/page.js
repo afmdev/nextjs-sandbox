@@ -15,6 +15,16 @@ export default async function AiTools() {
 	const blogCategory = category.items
 	const blogTag = tag.items
 
+	const handleSearch = () => {
+		const searchQuery = searchInputRef.current.value.toLowerCase();
+		const filteredBlogPosts = posts.items.filter((post) => {
+		  return post.fields.title.toLowerCase().includes(searchQuery) ||
+			post.fields.categories.some((category) => blogCategory.find((catName) => catName.sys.id === category.sys.id).fields.name.toLowerCase().includes(searchQuery)) ||
+			post.fields.tagss.some((tag) => blogTag.find((tagName) => tagName.sys.id === tag.sys.id).fields.name.toLowerCase().includes(searchQuery));
+		});
+		setBlogPosts(filteredBlogPosts);
+	  }
+
 
 	return (
 		<div className="relative isolate pt-10">
