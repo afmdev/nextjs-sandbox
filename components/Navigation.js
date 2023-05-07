@@ -18,6 +18,10 @@ const navigation = [
 		name: "About",
 		href: "/about",
 	},
+	{
+		name: "About",
+		href: "/about",
+	},
 ];
 
 export function Navigation() {
